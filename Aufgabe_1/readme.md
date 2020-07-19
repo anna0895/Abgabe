@@ -1,5 +1,10 @@
-**Line Art**
+**Hexagon**
 **Regeln**
-* Die Zeichnungen sollen nach einer Zeit verschwinden
-* Über die Bewegung der Maus auf der X-Achse wird die Farbe beeinflusst.
-* Über die Bewegung der Maus auf der Y-Achse wird die Strichstärke beeinflusst.
+* Beim bewegen der Maus auf der X-Achse verändert sich
+die Konturstärke. Je größer der X-Wert ist desto dicker
+wird die Kontur.
+* Bei Bewegung der Maus auf der Y-Achse ändert sich die
+Farbe der Konturen.
+
+
+
