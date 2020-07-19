@@ -1,5 +1,4 @@
 import processing.pdf.*;
-
 Circle c1;
 Circle c2;
 Circle c3;
