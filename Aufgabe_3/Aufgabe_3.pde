@@ -1,4 +1,5 @@
 import processing.pdf.*;
+
 Circle c1;
 Circle c2;
 Circle c3;
@@ -19,6 +20,8 @@ Circle c17;
 Circle c18;
 Circle c19;
 Circle c20;
+
+boolean record;
 
 
 void setup() {
@@ -52,10 +55,13 @@ void setup() {
   c18 = new Circle(0.4, circlewidth, width*2/6, circlewidth*8);
   c19 = new Circle(0.4, circlewidth, width*4/6, circlewidth*8);
   c20 = new Circle(0.1, circlewidth, width*6/6, circlewidth*8);
-  saveFrame("data/social-distance-######.png");
 }
 
 void draw() {
+  if (record) {
+    // #### wird durch Frame Nummer ersetzt
+    beginRecord(PDF, "frame-####.pdf"); 
+  }
   background(0);
 
   c1.show();
@@ -99,11 +105,15 @@ void draw() {
   }
   textSize(100);
   text("SOCIAL DISTANCE", mouseX, mouseY);
+  if (record) {
+    endRecord();
+  record = false;
+  }
+ 
 }
 
-
-// event that gets fired whenever the mouse button is released
-void mouseReleased() {
-  // save current frame to project folder
-  saveFrame("data/social-distance-######.png");
+//Löst aus bei dem Klicken der Maus
+void mousePressed() {
+  //Setzt den boolen Wert auf true
+  record = true;
 }
